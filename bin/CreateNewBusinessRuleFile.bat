@@ -1,0 +1,1 @@
+..\jre6\bin\java -cp ..\lib\businessRules.jar;..\lib\rcptoolbox.1.0.9.jar;..\lib\xbean.jar;..\lib\xmlbeans-qname.jar;..\lib\jsr173_1_0_api.jar;..\lib\resolver.jar;..\lib\xbean_xpath.jar;..\lib\xmlpublic.jar;..\dist\rmIntegration.jar;..\config;. com.mtit.process.RMSetup C:\workspace\Partyzone_test\output\businessRules.xml

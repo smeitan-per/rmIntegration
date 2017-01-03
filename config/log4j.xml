@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+  	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+    	<layout class="org.apache.log4j.PatternLayout">
+      		<param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L - %m%n"/>
+		</layout>
+	</appender>
+
+  	<appender name="FILE" class="org.apache.log4j.FileAppender">
+   		<param name="file" value="C:/Partyzone_test/log/log.out"/>
+   		<param name="immediateFlush" value="true"/>
+   		<param name="threshold" value="debug"/>
+   		<param name="append" value="false"/>
+   		<layout class="org.apache.log4j.PatternLayout">
+      		<param name="conversionPattern" value="%m%n"/>
+   		</layout>
+	</appender>
+	
+	<appender name="ReportAppender" class="org.apache.log4j.FileAppender">
+  		<param name="file" value="C:/Partyzone_test/reports/report.txt"/>
+   		<param name="immediateFlush" value="true"/>
+   		<param name="threshold" value="error"/>
+   		<param name="append" value="false"/>
+   		<layout class="org.apache.log4j.PatternLayout">
+      		<param name="conversionPattern" value="%m%n"/>
+   		</layout>
+	</appender>
+  		
+	<category name="com.mtit.transformer.WebWidgetsTransformer" additivity="false">
+	    <priority value="debug"/>
+	    <appender-ref ref="ReportAppender"/>
+	</category>
+	
+	<root>
+		<priority value="debug"></priority>
+	  	<appender-ref ref="FILE"/>
+	</root>
+</log4j:configuration>

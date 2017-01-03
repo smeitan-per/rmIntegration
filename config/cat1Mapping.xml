@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bus:Categories xmlns:bus="http://www.mtit.org/BusinessRules">
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Access</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Audio</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>ChiThe</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Delivr</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>JB new</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Linen</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Produc</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Sundry</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Table</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Wed</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Floor</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>All Blacks, Rugby &amp; Sports</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>49355</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>BBQgas</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire BBQ's,Spits &amp; Heaters</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55505</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Bake</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Cake Tin Hire</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>18257</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>BalAcc</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Balloon Accessories</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>13304</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Barser</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Bar &amp; Accessories</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55263</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Candle</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Candles</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>13296</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Cateri</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Catering Equipmt</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55266</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Chair</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Tables &amp; Chairs</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55268</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Confer</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Conference &amp; Office</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55272</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Crock</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Crockery</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55261</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Cutler</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Cutlery &amp; Serving Items</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55262</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Dressu</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Dressup (All Ages)</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>13297</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Effect</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Lights &amp; Effects Hire</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>13274</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Inflat</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Inflatables</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>20504</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Jukebx</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Jukebox Hire</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>13272</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Marque</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Tents &amp; Marquees</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>35441</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Platte</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Platters &amp; Baskets</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55267</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>PriBal</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Printed &amp; Special Balloons</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>17343</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>SAMMY</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Sammy the Steam Train</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>48257</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Urns</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Catering Equipmt</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55266</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>cake</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Cake Boards, Decorations etc</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>20823</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Furnit</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Decora</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Streamers &amp; Fun Tapes</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>13310</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Glass</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>Hire Glasses</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>55265</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>TabWar</bus:MYOBCategory>
+        <bus:WebSiteCategoryName>0-None</bus:WebSiteCategoryName>
+        <bus:WebSiteCategoryID>0</bus:WebSiteCategoryID>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>SFX</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>FOIL</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Balhel</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>AduThe</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Props</bus:MYOBCategory>
+    </bus:CategoryMapping>
+    <bus:CategoryMapping>
+        <bus:MYOBCategory>Season</bus:MYOBCategory>
+    </bus:CategoryMapping>
+</bus:Categories>

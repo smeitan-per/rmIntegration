@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.mtit.org/BusinessRules"
+	targetNamespace="http://www.mtit.org/BusinessRules"
+	 elementFormDefault="qualified">
+
+	<xs:element name="BusinessRules">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BusinessRule" minOccurs="1" maxOccurs="unbounded"
+					type="BusinessRuleType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BusinessRuleType">
+		<xs:sequence>
+			<xs:element name="Sequence" type="xs:integer" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="StockRangeTitle" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Department" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Category1" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Category2" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Category3" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Supplier" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Keyword" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="StockRule" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

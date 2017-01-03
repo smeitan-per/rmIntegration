@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.mtit.org/WWProductUploadResp"
+	targetNamespace="http://www.mtit.org/WWProductUploadResp"
+	 elementFormDefault="qualified">
+
+	<xs:element name="productuploadoutput">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="product" minOccurs="1" maxOccurs="unbounded"
+					type="product"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="product">
+		<xs:sequence>
+			<xs:element name="code" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="title" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="lineno" type="xs:integer" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="updatestatus" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="errormessage" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

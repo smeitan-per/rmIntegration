@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.mtit.org/BusinessRules"
+	targetNamespace="http://www.mtit.org/BusinessRules"
+	 elementFormDefault="qualified">
+
+	<xs:element name="Categories">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CategoryMapping" minOccurs="1" maxOccurs="unbounded"
+					type="CategoryMappingType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="CategoryMappingType">
+		<xs:sequence>
+			<xs:element name="MYOBCategory" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="WebSiteCategoryName" type="xs:string" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="WebSiteCategoryID" type="xs:integer" minOccurs="1"
+				maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

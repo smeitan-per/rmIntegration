@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bus:BusinessRules xmlns:bus="http://www.mtit.org/BusinessRules">
+    <bus:BusinessRule>
+        <bus:Sequence>6</bus:Sequence>
+        <bus:StockRangeTitle>Party Pro = M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Partpro.com</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>11</bus:Sequence>
+        <bus:StockRangeTitle>Morris Costumes = m</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Morris Costumes Usa</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>16</bus:Sequence>
+        <bus:StockRangeTitle>Halloween = M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>Hallow</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>all</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>21</bus:Sequence>
+        <bus:StockRangeTitle>St Pats = M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>St Pat</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>all</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>26</bus:Sequence>
+        <bus:StockRangeTitle>Xmas=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>Xmas</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>all</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>36</bus:Sequence>
+        <bus:StockRangeTitle>Glow sticks</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>Produc</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Glowsticks Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>1</bus:Sequence>
+        <bus:StockRangeTitle>All default</bus:StockRangeTitle>
+        <bus:Department>all</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>all</bus:Supplier>
+        <bus:StockRule>9999</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>46</bus:Sequence>
+        <bus:StockRangeTitle>Patalena=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Patalena House</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>51</bus:Sequence>
+        <bus:StockRangeTitle>Toucan=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Toucan Territory Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>56</bus:Sequence>
+        <bus:StockRangeTitle>Bakery Sugarcraft=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Bakery Sugarcraft Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>61</bus:Sequence>
+        <bus:StockRangeTitle>Teddy Time=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Teddy Time</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>66</bus:Sequence>
+        <bus:StockRangeTitle>Sims=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Sims Distributing Company</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>71</bus:Sequence>
+        <bus:StockRangeTitle>Funstuff = M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Funstuff Products Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>76</bus:Sequence>
+        <bus:StockRangeTitle>Celebrations=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Celebrations Group</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>81</bus:Sequence>
+        <bus:StockRangeTitle>Allwaze=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Allwaze Designs Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>86</bus:Sequence>
+        <bus:StockRangeTitle>Alice=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Alice In Balloonland Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>91</bus:Sequence>
+        <bus:StockRangeTitle>Allwayze=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Allwaze Designs Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>101</bus:Sequence>
+        <bus:StockRangeTitle>Golden Bridge = M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>Candle</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Golden Bridge Marketing Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>111</bus:Sequence>
+        <bus:StockRangeTitle>Kiwipong=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Kiwipong</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>121</bus:Sequence>
+        <bus:StockRangeTitle>Flag Shop=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>The Flag Shop Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>31</bus:Sequence>
+        <bus:StockRangeTitle>Sky View=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Skyview Trading Limited</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>96</bus:Sequence>
+        <bus:StockRangeTitle>bpm=m</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>BPM NZ Ltd T/A Corporate Expressions</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>41</bus:Sequence>
+        <bus:StockRangeTitle>Sullivans=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Sullivans (NZ) Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>116</bus:Sequence>
+        <bus:StockRangeTitle>MM Marketing=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>Produc</bus:Category1>
+        <bus:Category2>P/Corn</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>MM Marketing Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>126</bus:Sequence>
+        <bus:StockRangeTitle>Calvista=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Calvista New Zealand Limited</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>106</bus:Sequence>
+        <bus:StockRangeTitle>Pixie=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Pixie Party Supplies</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>131</bus:Sequence>
+        <bus:StockRangeTitle>PTL=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>PTL Creations Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>136</bus:Sequence>
+        <bus:StockRangeTitle>Lamp Specs = M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>Disco</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Lamp Specialists Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>141</bus:Sequence>
+        <bus:StockRangeTitle>HensInc=M</bus:StockRangeTitle>
+        <bus:Department>all</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>HENSinc</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>146</bus:Sequence>
+        <bus:StockRangeTitle>Holstens=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Holstens</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+    <bus:BusinessRule>
+        <bus:Sequence>151</bus:Sequence>
+        <bus:StockRangeTitle>Wishlantern=M</bus:StockRangeTitle>
+        <bus:Department>Sales</bus:Department>
+        <bus:Category1>all</bus:Category1>
+        <bus:Category2>all</bus:Category2>
+        <bus:Category3>all</bus:Category3>
+        <bus:Supplier>Wishlantern / Modowest Ltd</bus:Supplier>
+        <bus:StockRule>M</bus:StockRule>
+    </bus:BusinessRule>
+</bus:BusinessRules>

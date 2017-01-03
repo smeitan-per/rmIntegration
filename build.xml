@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PartyZone" default="all">
+	<property name="lib.dir" value="./lib" />
+	<property name="src.dir" value="./src" />
+	<property name="bin.dir" value="./bin" />
+	<property name="dist.dir" value="./dist" />
+	<property name="build.dir" value="./build" />
+
+	<taskdef name="xmlbean" classname="org.apache.xmlbeans.impl.tool.XMLBean" classpath="${lib.dir}/xbean.jar" />
+
+	<fileset id="lib" dir="${lib.dir}">
+		<include name="**/*.jar" />
+	</fileset>
+
+	<path id="build.classpath">
+		<fileset refid="lib" />
+		<!--<fileset file="../org.eclipse.swt/swt.jar"/>
+		<fileset dir="../plugins">
+		    <include name="org.eclipse.core.commands_3.6.0.I20100512-1500.jar"/>
+		    <include name="org.eclipse.equinox.common_3.6.0.v20100503.jar"/>
+		    <include name="org.eclipse.jface_3.6.2.M20110210-1200.jar"/>
+		    <include name="org.eclipse.osgi_3.6.2.R36x_v20110210.jar"/>
+		    <include name="org.eclipse.ui.workbench_3.6.2.M20110210-1200.jar"/>
+		    <include name="org.eclipse.core.runtime_3.6.0.v20100505.jar"/>
+		    <include name="org.eclipse.equinox.registry_3.5.0.v20100503.jar"/>
+		</fileset>-->
+	</path>
+
+	<target name="genBean">
+		<xmlbean schema="resources/schema_files/BusinessRules.xsd" 
+			destfile="${lib.dir}/businessRules1.jar" 
+			classpathref="build.classpath" />
+		<xmlbean schema="resources/schema_files/WWProductUploadResp.xsd" 
+					destfile="${lib.dir}/wwResponse.jar" 
+					classpathref="build.classpath" />
+		<xmlbean schema="resources/schema_files/TitleMapping.xsd" 
+							destfile="${lib.dir}/titleMapping.jar" 
+							classpathref="build.classpath" />
+		<xmlbean schema="resources/schema_files/CatMapping.xsd" 
+									destfile="${lib.dir}/categoryMapping.jar" 
+									classpathref="build.classpath" />
+	</target>
+
+	<target name="all" depends="clean, compile, jar"/>
+
+	<target name="clean">
+		<delete quiet="true">
+			<fileset dir="${build.dir}" />
+			<fileset dir="${dist.dir}" />
+		</delete>
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${build.dir}"/>
+		<javac classpathref="build.classpath" destdir="${build.dir}" debug="true" debuglevel="lines,vars,source" deprecation="${javac.deprecation}" nowarn="on">
+			<src path="${src.dir}" />
+			<include name="**/*.java" />
+		</javac>
+	</target>
+
+	<target name="jar">
+		<mkdir dir="${dist.dir}"/>
+		<jar destfile="${dist.dir}/rmIntegration.jar">
+			<fileset dir="${build.dir}" />
+		</jar>
+	</target>
+</project>

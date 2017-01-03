@@ -1,0 +1,9 @@
+input
+output
+log
+dist
+reports
+target
+build
+*.svn
+.settings

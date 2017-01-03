@@ -1,0 +1,9 @@
+
+
+INSTALL non-mavenised libraries:
+mvn install:install-file -Dfile=lib/rcptoolbox.1.0.9.jar -DgroupId=com.richclientgui -DartifactId=toolbox -Dversion=1.0.9 -Dpackaging=jar
+mvn install:install-file -Dfile=icons.jar -DgroupId=com.mtit -DartifactId=icons -Dversion=1.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile=net.sf.paperclips_1.0.4.200908120926.jar -DgroupId=com.mtit -DartifactId=net.sf.paperclips -Dversion=1.0.4.200908120926 -Dpackaging=jar
+mvn install:install-file -Dfile=net.sf.paperclips.ui_1.0.4.200908120926.jar -DgroupId=com.mtit -DartifactId=net.sf.paperclips.ui -Dversion=1.0.4.200908120926 -Dpackaging=jar
+mvn install:install-file -Dfile=printUtil.jar -DgroupId=com.mtit -DartifactId=printUtil -Dversion=1.0 -Dpackaging=jar
