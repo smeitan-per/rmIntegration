@@ -47,14 +47,11 @@ public class WebWidgetsTransformer implements ITransformer {
 //			",p_outofstockmessage,p_minqty,p_maxqty,p_qtyinc,p_qtyinstock,p_qtylowstock" +
 //			",p_supplierprice,p_suppliercode,p_suppliername,p_filename,p_metatitle,p_emailfile,p_sales_end,";
 
-	private final String header = "p_code,p_title,p_order,p_img,p_details,p_extra1,p_extra2,p_extra3" +
-	",p_group,p_groupid,p_groupid2,p_groupid3,p_groupid4,p_groupid5,p_groupid6,p_groupid7" +
-	",p_groupid8,p_price,p_priceprediscount,p_pricea,p_priceb,p_pricec,p_priced,p_pricee" +
-	",p_pricef,p_priceg,p_priceh,p_pricebreaka,p_pricebreaka_minqty,p_pricebreakb,p_pricebreakb_minqty" +
-	",p_pricebreakc,p_pricebreakc_minqty,p_shipping,p_shipping_int,p_uom,p_weight" +
-	",p_outofstockmessage,p_minqty,p_maxqty,p_qtyinc,p_qtyinstock,p_qtylowstock" +
-	",p_supplierprice,p_suppliercode,p_suppliername,p_filename,p_metatitle,p_emailfile,p_sales_end,";
-	
+	private final String header = "p_code,p_title,p_order,p_details,p_extra1" +
+	",p_groupid,p_groupid2,p_groupid3,p_groupid4" +
+	",p_price,p_priceprediscount,p_pricea,p_priceb,p_pricec,p_priced" +
+	",p_uom,p_weight,p_qtyinstock,p_sales_end,";
+
 	private String inputFileName;
 
 	private String outputFile;
@@ -289,9 +286,17 @@ public class WebWidgetsTransformer implements ITransformer {
 			writer.write(header);
 			
 			for (Iterator<Map.Entry<String, WebWidgetObject>> itr=wwMap.entrySet().iterator(); itr.hasNext(); ) {
-				writer.newLine();
 				Entry<String, WebWidgetObject> entry = itr.next();
-				writer.write(entry.getValue().toString());
+				
+				if ("BATTAAA".equals(entry.getValue().getP_code()) || "FB1".equals(entry.getValue().getP_code())) {
+					System.out.println("Original value="+ entry.getValue().toString());				
+				}
+				
+				// Only create an entry if the value has changed, otherwise there is no point.
+				if (entry.getValue().isHasValueChanged()) {
+					writer.newLine();
+					writer.write(entry.getValue().toString());					
+				}
 			}
 		
 			logger.info("Ended at " + new Date(System.currentTimeMillis()));

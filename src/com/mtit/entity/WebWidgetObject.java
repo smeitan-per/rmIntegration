@@ -4,10 +4,15 @@
 package com.mtit.entity;
 
 import java.io.IOException;
+import java.util.zip.CRC32;
+import java.util.zip.Checksum;
+
+import org.apache.log4j.Logger;
 
 import com.csvreader.CsvReader;
 import com.mtit.process.SyncException;
 import com.mtit.transformer.WebWidgetsTransformer;
+import com.mtit.utils.LoggerFactory;
 
 /**
  * POJO for storing web widget objects so that this can be used for reuploading
@@ -17,7 +22,8 @@ import com.mtit.transformer.WebWidgetsTransformer;
  *
  */
 public class WebWidgetObject {
-	
+	public static Logger logger = LoggerFactory.getLogger(WebWidgetObject.class);
+
 	public static final String DEFAULT_GROUP_ID = "-9";
 	
 	private String p_code = "";
@@ -71,6 +77,8 @@ public class WebWidgetObject {
 	private String p_emailfile = "";
 	private String p_sale_ends = "";
 
+	private boolean hasValueChanged;
+	
 	/**
 	 * Empty Constructor
 	 */
@@ -78,69 +86,6 @@ public class WebWidgetObject {
 		super();
 	}
 
-	/**
-	 * Constructor with a String as a parameter
-	 * @param line
-	 * @throws SyncException 
-	 */
-	public WebWidgetObject(String line) throws SyncException {
-		if (line != null) {
-			String[] arrays=line.split(WebWidgetsTransformer.SEPARATOR);
-			
-			int i=0;
-			p_code=getValueFromArray(arrays,i);
-			p_title=getValueFromArray(arrays,++i);
-			p_order=getValueFromArray(arrays,++i);
-			p_img=getValueFromArray(arrays,++i);
-			p_details=getValueFromArray(arrays,++i);
-			p_extra1=getValueFromArray(arrays,++i);
-			p_extra2=getValueFromArray(arrays,++i);
-			p_extra3=getValueFromArray(arrays,++i);
-			p_group=getValueFromArray(arrays,++i);
-			p_groupid=getValueFromArray(arrays,++i);
-			p_groupid2=getValueFromArray(arrays,++i);
-			p_groupid3=getValueFromArray(arrays,++i);
-			p_groupid4=getValueFromArray(arrays,++i);
-			p_groupid5=getValueFromArray(arrays,++i);
-			p_groupid6=getValueFromArray(arrays,++i);
-			p_groupid7=getValueFromArray(arrays,++i);
-			p_groupid8=getValueFromArray(arrays,++i);
-			p_price=getValueFromArray(arrays,++i);
-			p_priceprediscount=getValueFromArray(arrays,++i);
-			p_pricea=getValueFromArray(arrays,++i);
-			p_priceb=getValueFromArray(arrays,++i);
-			p_pricec=getValueFromArray(arrays,++i);
-			p_priced=getValueFromArray(arrays,++i);
-			p_pricee=getValueFromArray(arrays,++i);
-			p_pricef=getValueFromArray(arrays,++i);
-			p_priceg=getValueFromArray(arrays,++i);
-			p_priceh=getValueFromArray(arrays,++i);
-			p_pricebreaka=getValueFromArray(arrays,++i);
-			p_pricebreaka_minqty=getValueFromArray(arrays,++i);
-			p_pricebreakb=getValueFromArray(arrays,++i);
-			p_pricebreakb_minqty=getValueFromArray(arrays,++i);
-			p_pricebreakc=getValueFromArray(arrays,++i);
-			p_pricebreakc_minqty=getValueFromArray(arrays,++i);
-			p_shipping=getValueFromArray(arrays,++i);
-			p_shipping_int=getValueFromArray(arrays,++i);
-			p_uom=getValueFromArray(arrays,++i);
-			p_weight=getValueFromArray(arrays,++i);
-			p_outofstockmessage=getValueFromArray(arrays,++i);
-			p_minqty=getValueFromArray(arrays,++i);
-			p_maxqty=getValueFromArray(arrays,++i);
-			p_qtyinc=getValueFromArray(arrays,++i);
-			p_qtyinstock=getValueFromArray(arrays,++i);
-			p_qtylowstock=getValueFromArray(arrays,++i);
-			p_supplierprice=getValueFromArray(arrays,++i);
-			p_suppliercode=getValueFromArray(arrays,++i);
-			p_suppliername=getValueFromArray(arrays,++i);
-			p_filename=getValueFromArray(arrays,++i);
-			p_metatitle=getValueFromArray(arrays,++i);
-			p_emailfile=getValueFromArray(arrays,++i);
-			
-		}
-	}
-	
 	/**
 	 * Constructor
 	 * @param reader
@@ -258,8 +203,10 @@ public class WebWidgetObject {
 	 * @param p_code the p_code to set
 	 */
 	public void setP_code(String p_code) {
+		checkStringModified(this.p_code, p_code);
 		this.p_code = p_code;
 	}
+	
 	/**
 	 * @return the p_title
 	 */
@@ -270,6 +217,7 @@ public class WebWidgetObject {
 	 * @param p_title the p_title to set
 	 */
 	public void setP_title(String p_title) {
+		checkStringModified(this.p_title, p_title);
 		this.p_title = p_title;
 	}
 	/**
@@ -282,19 +230,8 @@ public class WebWidgetObject {
 	 * @param p_order the p_order to set
 	 */
 	public void setP_order(String p_order) {
+		checkStringModified(this.p_order, p_order);
 		this.p_order = p_order;
-	}
-	/**
-	 * @return the p_img
-	 */
-	public String getP_img() {
-		return p_img;
-	}
-	/**
-	 * @param p_img the p_img to set
-	 */
-	public void setP_img(String p_img) {
-		this.p_img = p_img;
 	}
 	/**
 	 * @return the p_details
@@ -306,6 +243,7 @@ public class WebWidgetObject {
 	 * @param p_details the p_details to set
 	 */
 	public void setP_details(String p_details) {
+		checkStringModified(this.p_details, p_details);
 		this.p_details = p_details;
 	}
 	/**
@@ -318,6 +256,7 @@ public class WebWidgetObject {
 	 * @param p_extra1 the p_extra1 to set
 	 */
 	public void setP_extra1(String p_extra1) {
+		checkStringModified(this.p_extra1, p_extra1);
 		this.p_extra1 = p_extra1;
 	}
 	/**
@@ -330,6 +269,7 @@ public class WebWidgetObject {
 	 * @param p_extra2 the p_extra2 to set
 	 */
 	public void setP_extra2(String p_extra2) {
+		checkStringModified(this.p_extra2, p_extra2);
 		this.p_extra2 = p_extra2;
 	}
 	/**
@@ -342,6 +282,7 @@ public class WebWidgetObject {
 	 * @param p_extra3 the p_extra3 to set
 	 */
 	public void setP_extra3(String p_extra3) {
+		checkStringModified(this.p_extra3, p_extra3);
 		this.p_extra3 = p_extra3;
 	}
 	/**
@@ -354,6 +295,7 @@ public class WebWidgetObject {
 	 * @param p_group the p_group to set
 	 */
 	public void setP_group(String p_group) {
+		checkStringModified(this.p_group, p_group);
 		this.p_group = p_group;
 	}
 	/**
@@ -366,6 +308,7 @@ public class WebWidgetObject {
 	 * @param p_groupid the p_groupid to set
 	 */
 	public void setP_groupid(String p_groupid) {
+		checkStringModified(this.p_groupid, p_groupid);
 		this.p_groupid = p_groupid;
 	}
 	/**
@@ -378,6 +321,7 @@ public class WebWidgetObject {
 	 * @param p_groupid2 the p_groupid2 to set
 	 */
 	public void setP_groupid2(String p_groupid2) {
+		checkStringModified(this.p_groupid2, p_groupid2);
 		this.p_groupid2 = p_groupid2;
 	}
 	/**
@@ -390,6 +334,7 @@ public class WebWidgetObject {
 	 * @param p_groupid3 the p_groupid3 to set
 	 */
 	public void setP_groupid3(String p_groupid3) {
+		checkStringModified(this.p_groupid3, p_groupid3);
 		this.p_groupid3 = p_groupid3;
 	}
 	/**
@@ -402,6 +347,7 @@ public class WebWidgetObject {
 	 * @param p_groupid4 the p_groupid4 to set
 	 */
 	public void setP_groupid4(String p_groupid4) {
+		checkStringModified(this.p_groupid4, p_groupid4);
 		this.p_groupid4 = p_groupid4;
 	}
 	/**
@@ -414,6 +360,7 @@ public class WebWidgetObject {
 	 * @param p_groupid5 the p_groupid5 to set
 	 */
 	public void setP_groupid5(String p_groupid5) {
+		checkStringModified(this.p_groupid5, p_groupid5);
 		this.p_groupid5 = p_groupid5;
 	}
 	/**
@@ -426,6 +373,7 @@ public class WebWidgetObject {
 	 * @param p_groupid6 the p_groupid6 to set
 	 */
 	public void setP_groupid6(String p_groupid6) {
+		checkStringModified(this.p_groupid6, p_groupid6);
 		this.p_groupid6 = p_groupid6;
 	}
 	/**
@@ -438,6 +386,7 @@ public class WebWidgetObject {
 	 * @param p_groupid7 the p_groupid7 to set
 	 */
 	public void setP_groupid7(String p_groupid7) {
+		checkStringModified(this.p_groupid7, p_groupid7);
 		this.p_groupid7 = p_groupid7;
 	}
 	/**
@@ -450,6 +399,7 @@ public class WebWidgetObject {
 	 * @param p_groupid8 the p_groupid8 to set
 	 */
 	public void setP_groupid8(String p_groupid8) {
+		checkStringModified(this.p_groupid8, p_groupid8);
 		this.p_groupid8 = p_groupid8;
 	}
 	/**
@@ -462,6 +412,7 @@ public class WebWidgetObject {
 	 * @param p_price the p_price to set
 	 */
 	public void setP_price(String p_price) {
+		checkDoubleModified(this.p_price, p_price);
 		this.p_price = p_price;
 	}
 	/**
@@ -474,6 +425,7 @@ public class WebWidgetObject {
 	 * @param p_priceprediscount the p_priceprediscount to set
 	 */
 	public void setP_priceprediscount(String p_priceprediscount) {
+		checkDoubleModified(this.p_priceprediscount, p_priceprediscount);
 		this.p_priceprediscount = p_priceprediscount;
 	}
 	/**
@@ -486,6 +438,7 @@ public class WebWidgetObject {
 	 * @param p_pricea the p_pricea to set
 	 */
 	public void setP_pricea(String p_pricea) {
+		checkDoubleModified(this.p_pricea, p_pricea);
 		this.p_pricea = p_pricea;
 	}
 	/**
@@ -498,6 +451,7 @@ public class WebWidgetObject {
 	 * @param p_priceb the p_priceb to set
 	 */
 	public void setP_priceb(String p_priceb) {
+		checkDoubleModified(this.p_priceb, p_priceb);
 		this.p_priceb = p_priceb;
 	}
 	/**
@@ -510,6 +464,7 @@ public class WebWidgetObject {
 	 * @param p_pricec the p_pricec to set
 	 */
 	public void setP_pricec(String p_pricec) {
+		checkDoubleModified(this.p_pricec, p_pricec);
 		this.p_pricec = p_pricec;
 	}
 	/**
@@ -522,6 +477,7 @@ public class WebWidgetObject {
 	 * @param p_priced the p_priced to set
 	 */
 	public void setP_priced(String p_priced) {
+		checkDoubleModified(this.p_priced, p_priced);
 		this.p_priced = p_priced;
 	}
 	/**
@@ -534,6 +490,7 @@ public class WebWidgetObject {
 	 * @param p_pricee the p_pricee to set
 	 */
 	public void setP_pricee(String p_pricee) {
+		checkDoubleModified(this.p_pricee, p_pricee);
 		this.p_pricee = p_pricee;
 	}
 	/**
@@ -546,6 +503,7 @@ public class WebWidgetObject {
 	 * @param p_pricef the p_pricef to set
 	 */
 	public void setP_pricef(String p_pricef) {
+		checkDoubleModified(this.p_pricef, p_pricef);
 		this.p_pricef = p_pricef;
 	}
 	/**
@@ -558,6 +516,7 @@ public class WebWidgetObject {
 	 * @param p_priceg the p_priceg to set
 	 */
 	public void setP_priceg(String p_priceg) {
+		checkDoubleModified(this.p_priceg, p_priceg);
 		this.p_priceg = p_priceg;
 	}
 	/**
@@ -570,6 +529,7 @@ public class WebWidgetObject {
 	 * @param p_priceh the p_priceh to set
 	 */
 	public void setP_priceh(String p_priceh) {
+		checkDoubleModified(this.p_priceh, p_priceh);
 		this.p_priceh = p_priceh;
 	}
 	/**
@@ -582,6 +542,7 @@ public class WebWidgetObject {
 	 * @param p_pricebreaka the p_pricebreaka to set
 	 */
 	public void setP_pricebreaka(String p_pricebreaka) {
+		checkDoubleModified(p_pricebreaka, p_pricebreaka);
 		this.p_pricebreaka = p_pricebreaka;
 	}
 	/**
@@ -678,6 +639,7 @@ public class WebWidgetObject {
 	 * @param p_uom the p_uom to set
 	 */
 	public void setP_uom(String p_uom) {
+		checkDoubleModified(this.p_uom, p_uom);
 		this.p_uom = p_uom;
 	}
 	/**
@@ -690,6 +652,7 @@ public class WebWidgetObject {
 	 * @param p_uom the p_uom to set
 	 */
 	public void setP_weight(String p_weight) {
+		checkDoubleModified(this.p_weight, p_weight);
 		this.p_weight = p_weight;
 	}
 	/**
@@ -702,6 +665,7 @@ public class WebWidgetObject {
 	 * @param p_outofstockmessage the p_outofstockmessage to set
 	 */
 	public void setP_outofstockmessage(String p_outofstockmessage) {
+		checkDoubleModified(this.p_outofstockmessage, p_outofstockmessage);
 		this.p_outofstockmessage = p_outofstockmessage;
 	}
 	/**
@@ -750,6 +714,7 @@ public class WebWidgetObject {
 	 * @param p_qtyinstock the p_qtyinstock to set
 	 */
 	public void setP_qtyinstock(String p_qtyinstock) {
+		checkDoubleModified(this.p_qtyinstock, p_qtyinstock);
 		this.p_qtyinstock = p_qtyinstock;
 	}
 	/**
@@ -762,6 +727,7 @@ public class WebWidgetObject {
 	 * @param p_qtylowstock the p_qtylowstock to set
 	 */
 	public void setP_qtylowstock(String p_qtylowstock) {
+		checkDoubleModified(this.p_qtylowstock, p_qtylowstock);
 		this.p_qtylowstock = p_qtylowstock;
 	}
 	/**
@@ -848,7 +814,16 @@ public class WebWidgetObject {
 	 * @param p_sale_ends the p_sale_ends to set
 	 */
 	public void setP_sale_ends(String p_sale_ends) {
+		checkStringModified(this.p_sale_ends, p_sale_ends);
 		this.p_sale_ends = p_sale_ends;
+	}
+
+	public boolean isHasValueChanged() {
+		return hasValueChanged;
+	}
+
+	public void setHasValueChanged(boolean hasValueChanged) {
+		this.hasValueChanged = hasValueChanged;
 	}
 
 	/**
@@ -865,54 +840,50 @@ public class WebWidgetObject {
 		String returnString = "\""+ p_code +  "\""+ SEPARATOR 
 		+ "\"" + p_title + "\"" + SEPARATOR
 		+ "\"" + p_order + "\"" + SEPARATOR
-		+ "\"" + p_img + "\"" + SEPARATOR
 		+ "\"" + p_details + "\"" + SEPARATOR
 		+ "\"" + p_extra1 + "\"" + SEPARATOR
-		+ "\"" + p_extra2 + "\"" + SEPARATOR
-		+ "\"" + p_extra3 + "\"" + SEPARATOR
-		+ "\"" + p_group + "\"" + SEPARATOR
 		+ "\"" + p_groupid + "\"" + SEPARATOR
 		+ "\"" + p_groupid2 + "\"" + SEPARATOR
 		+ "\"" + p_groupid3 + "\"" + SEPARATOR
 		+ "\"" + p_groupid4 + "\"" + SEPARATOR
-		+ "\"" + p_groupid5 + "\"" + SEPARATOR
-		+ "\"" + p_groupid6 + "\"" + SEPARATOR
-		+ "\"" + p_groupid7 + "\"" + SEPARATOR
-		+ "\"" + p_groupid8 + "\"" + SEPARATOR
 		+ "\"" + p_price + "\"" + SEPARATOR
 		+ "\"" + p_priceprediscount + "\"" + SEPARATOR
 		+ "\"" + p_pricea + "\"" + SEPARATOR
 		+ "\"" + p_priceb + "\"" + SEPARATOR
 		+ "\"" + p_pricec + "\"" + SEPARATOR
 		+ "\"" + p_priced + "\"" + SEPARATOR
-		+ "\"" + p_pricee + "\"" + SEPARATOR
-		+ "\"" + p_pricef + "\"" + SEPARATOR
-		+ "\"" + p_priceg + "\"" + SEPARATOR
-		+ "\"" + p_priceh + "\"" + SEPARATOR
-		+ "\"" + p_pricebreaka + "\"" + SEPARATOR
-		+ "\"" + p_pricebreaka_minqty + "\"" + SEPARATOR
-		+ "\"" + p_pricebreakb + "\"" + SEPARATOR
-		+ "\"" + p_pricebreakb_minqty + "\"" + SEPARATOR
-		+ "\"" + p_pricebreakc + "\"" + SEPARATOR
-		+ "\"" + p_pricebreakc_minqty + "\"" + SEPARATOR
-		+ "\"" + p_shipping + "\"" + SEPARATOR
-		+ "\"" + p_shipping_int + "\"" + SEPARATOR
 		+ "\"" + p_uom + "\"" + SEPARATOR
 		+ "\"" + p_weight + "\"" + SEPARATOR 
-		+ "\"" + p_outofstockmessage + "\"" + SEPARATOR
-		+ "\"" + p_minqty + "\"" + SEPARATOR
-		+ "\"" + p_maxqty + "\"" + SEPARATOR
-		+ "\"" + p_qtyinc + "\"" + SEPARATOR
 		+ "\"" + p_qtyinstock + "\"" + SEPARATOR
-		+ "\"" + p_qtylowstock + "\"" + SEPARATOR
-		+ "\"" + p_supplierprice + "\"" + SEPARATOR
-		+ "\"" + p_suppliercode + "\"" + SEPARATOR
-		+ "\"" + p_suppliername + "\"" + SEPARATOR
-		+ "\"" + p_filename + "\"" + SEPARATOR
-		+ "\"" + p_metatitle + "\"" + SEPARATOR
-		+ "\"" + p_emailfile + "\"" + SEPARATOR
 		+ "\"" + p_sale_ends + "\"" + SEPARATOR;
 
 		return returnString;
+	}
+	
+	/**
+	 * Helper method to check if a string value has changed. 
+	 * 
+	 * @param origString
+	 * @param newString
+	 */
+	private void checkStringModified(String origString, String newString) {
+		if (!isHasValueChanged() && !origString.equals(newString)) {
+			logger.debug("p_code="+p_code+":old_value="+origString+":new_value="+newString);
+			setHasValueChanged(true);
+		}		
+	}
+
+	/**
+	 * Helper method to check if a double value has changed.
+	 * 
+	 * @param origDoubleStr
+	 * @param newDoubleStr
+	 */
+	private void checkDoubleModified(String origDoubleStr, String newDoubleStr) {
+		if (!isHasValueChanged() && origDoubleStr !=null && newDoubleStr != null
+				&& !Double.valueOf(origDoubleStr).equals(Double.valueOf(newDoubleStr))) {
+			logger.debug("p_code="+p_code+":old_value="+Double.valueOf(origDoubleStr)+":new_value="+Double.valueOf(newDoubleStr));
+			setHasValueChanged(true);
+		}		
 	}
 }	

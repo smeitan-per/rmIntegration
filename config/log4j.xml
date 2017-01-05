@@ -8,7 +8,7 @@
 	</appender>
 
   	<appender name="FILE" class="org.apache.log4j.FileAppender">
-   		<param name="file" value="C:/Partyzone_test/log/log.out"/>
+   		<param name="file" value="C:/Partyzone_temp/log/log.out"/>
    		<param name="immediateFlush" value="true"/>
    		<param name="threshold" value="debug"/>
    		<param name="append" value="false"/>
