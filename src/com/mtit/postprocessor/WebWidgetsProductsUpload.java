@@ -22,7 +22,9 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -86,19 +88,22 @@ public class WebWidgetsProductsUpload implements IPostProcessor {
 		HttpEntity resEntity = null;
 
 		try {
-			MultipartEntity reqEntity = new MultipartEntity();
-			reqEntity.addPart("uploadFile", bin);
+			HttpEntity reqEntity = MultipartEntityBuilder.create()
+					.addBinaryBody("uploadFile", new File(inputFile), ContentType.create("application/octet-stream"), "WebWidgets.csv")
+					.build();
 			httppost.setEntity(reqEntity);
-
-            logger.debug("executing request " + httppost.getRequestLine());
+			logger.debug("executing request " + httppost.getRequestLine());
 
             HttpResponse response = httpclient.execute(httppost);
 			resEntity = response.getEntity();
 		
 			String responseStr = EntityUtils.toString(resEntity);
 			logger.info("webwidget response=" + responseStr);
-            preprocessUploadResp(responseStr);
-			closeReport();
+			if (response.getStatusLine().getStatusCode() == 200) {
+				preprocessUploadResp(responseStr);
+			} else {
+				throw new SyncException("Unable to upload file to web widgets. Error is: " + response.getStatusLine().getReasonPhrase());
+			}
             
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
@@ -110,6 +115,7 @@ public class WebWidgetsProductsUpload implements IPostProcessor {
 			e.printStackTrace();
 			throw new SyncException(e.getMessage());
 		} finally {
+			closeReport();
 			if (resEntity != null) {
 				try {
 					EntityUtils.consume(resEntity);

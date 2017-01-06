@@ -288,10 +288,6 @@ public class WebWidgetsTransformer implements ITransformer {
 			for (Iterator<Map.Entry<String, WebWidgetObject>> itr=wwMap.entrySet().iterator(); itr.hasNext(); ) {
 				Entry<String, WebWidgetObject> entry = itr.next();
 				
-				if ("BATTAAA".equals(entry.getValue().getP_code()) || "FB1".equals(entry.getValue().getP_code())) {
-					System.out.println("Original value="+ entry.getValue().toString());				
-				}
-				
 				// Only create an entry if the value has changed, otherwise there is no point.
 				if (entry.getValue().isHasValueChanged()) {
 					writer.newLine();

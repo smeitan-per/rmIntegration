@@ -157,8 +157,8 @@ public class Controller {
 	public static void main(String[] args) {
 		try {
 			IntProperties.propertyPath = args[0];
-			generateFile();
-//			synchronize();
+//			generateFile();
+			synchronize();
 		} catch (SyncException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

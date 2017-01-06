@@ -8,6 +8,7 @@ import java.io.File;
 import org.apache.xmlbeans.XmlOptions;
 import org.mtit.businessRules.BusinessRulesDocument;
 
+import com.mtit.entity.IntProperties;
 import com.mtit.entity.RMDao;
 
 /**
@@ -26,6 +27,7 @@ public class RMSetup {
 		String outputFile=args[0];
 		
 		try {
+			IntProperties.propertyPath = args[1];
 			dao = new RMDao();
 			
 			XmlOptions opts = new XmlOptions();
