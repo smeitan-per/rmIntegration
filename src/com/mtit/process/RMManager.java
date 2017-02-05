@@ -1,5 +1,6 @@
 package com.mtit.process;
 
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -119,11 +120,14 @@ public class RMManager {
 			stock.setWebPrice(RoundUtil.round(rrp * (100 + discountPercentage)
 					/ 100));
 			stock.setWebPreDiscountPrice(RoundUtil.round(rrp));
-			stock.setSaleEndDate(ppobj.getEndDate());
+			if (ppobj.getEndDate().after(Calendar.getInstance().getTime())) {
+				stock.setSaleEndDate(ppobj.getEndDate());
+			}
 			stock.setSpecialMessage(IntProperties.getProperty(IntProperties.PROMO_PRICE_MESSAGE));
 			return true;
 		} else {
 			stock.setSpecialMessage("");
+			stock.setSaleEndDate(null);
 			return false;
 		}
 	}

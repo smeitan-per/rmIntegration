@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -65,6 +66,8 @@ public class WebWidgetsTransformer implements ITransformer {
 	public static final String SEPARATOR=",";
 	
 	private boolean isFileValid = true;
+	
+	private static Date currentDate = Calendar.getInstance().getTime();
 	
 	private int safetyMargin = 0;
 	private int recordsToRemove=0;
@@ -162,9 +165,13 @@ public class WebWidgetsTransformer implements ITransformer {
 					}
 				}
 
-				if (rmObj.getSaleEndDate() != null ) {
-					String salesEndDate = DateFormatter.formatDate(rmObj.getSaleEndDate(), dateFormat);
-					ww.setP_sale_ends(salesEndDate);
+				if (rmObj.getSaleEndDate() != null) {
+					if (rmObj.getSaleEndDate().before(currentDate)) {
+						String salesEndDate = DateFormatter.formatDate(rmObj.getSaleEndDate(), dateFormat);
+						ww.setP_sale_ends(salesEndDate);
+					}
+				} else {
+					ww.setP_sale_ends("");
 				}
 			}
 		}

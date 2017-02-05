@@ -176,6 +176,7 @@ public class WebWidgetsProductsUpload implements IPostProcessor {
 		String line = null;
 		String url = null;
 		
+		System.out.println("deleteURL="+ deleteURL);
 		if (deleteURL != null && file.exists()) {
 			BufferedReader br = null;
 			try {
@@ -183,8 +184,9 @@ public class WebWidgetsProductsUpload implements IPostProcessor {
 				while ((line = br.readLine()) != null ) {
 					String barcode = line.split(",")[0];
 					url = deleteURL + "&deleteProduct=" + barcode;
- 
-					HttpClient httpclient = new DefaultHttpClient();
+
+					HttpClient httpclient = HttpClientBuilder.create().build();
+
 					HttpPost httppost = new HttpPost(url);
 
 					HttpEntity resEntity = null;
@@ -197,8 +199,10 @@ public class WebWidgetsProductsUpload implements IPostProcessor {
 
 				}
 			} catch (MalformedURLException e) {
+				e.printStackTrace();
 				logger.error("URL is not valid: " + url +":"+ e.getMessage());
 			} catch (IOException e) {
+				e.printStackTrace();
 				logger.error("Unable to read contents of " + url + ":" + e.getMessage());
 			} finally {
 				try {
